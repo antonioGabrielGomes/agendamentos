@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import Stars from '../Stars';
+
 const Area = styled.TouchableOpacity`
   background-color: #ffffff;
   margin-bottom: 20px;
@@ -9,7 +11,7 @@ const Area = styled.TouchableOpacity`
   flex-direction: row;
 `;
 
-const Avatar = styled.View`
+const Avatar = styled.Image`
   width: 88px;
   height: 88px;
   border-radius: 20px;
@@ -45,6 +47,8 @@ export default ({data}) => {
       <Avatar source={{uri: data.avatar}} />
       <InfoArea>
         <UserName>{data.name}</UserName>
+
+        <Stars stars={data.stars} showNumber={true} />
 
         <SeeProfileButton>
           <SeeProfileButtonText>Ver Perfil</SeeProfileButtonText>
